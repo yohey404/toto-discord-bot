@@ -3,13 +3,12 @@ import requests
 import os
 from playwright.sync_api import sync_playwright
 
-WEBHOOK = os.environ[https://discord.com/api/webhooks/1513748913020993657/O3nPQ8_lhLJ-WdnMLflpY8JFl2GzwGTOV_VGogW_wzIeVotZNXLvIke2JzaHsVznZ5tg]
+WEBHOOK = os.environ["https://discord.com/api/webhooks/1513748913020993657/O3nPQ8_lhLJ-WdnMLflpY8JFl2GzwGTOV_VGogW_wzIeVotZNXLvIke2JzaHsVznZ5tg"]
 
 with sync_playwright() as p:
 browser = p.chromium.launch(headless=True)
 page = browser.new_page()
 
-```
 page.goto(
     "https://toto.rakuten.co.jp/big/carryover/",
     wait_until="networkidle"
@@ -18,7 +17,6 @@ page.goto(
 text = page.locator("body").inner_text()
 
 browser.close()
-```
 
 nums = re.findall(r'([\d,]+)円', text)
 
